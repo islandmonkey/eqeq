@@ -23,13 +23,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package com.islandmonkey.eqeq;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.media.audiofx.Equalizer;
-import android.media.AudioManager;
-import android.app.IntentService;
 import android.content.Context;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.media.audiofx.Equalizer;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import com.islandmonkey.eqeq.*;
 
 
 public class EQActivity extends Activity {
@@ -47,6 +49,20 @@ public class EQActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.eq, menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	switch(item.getItemId()) {
+    		case R.id.about_form:
+    			Intent intent = new Intent(this, AboutForm.class);
+    			this.startActivity(intent); // That's right now (well, it at least looks better)
+    			break;
+    		case R.id.action_settings:
+    			Intent settingsintent = new Intent(this, SettingsActivity.class);
+    			this.startActivity(settingsintent);
+    			break;
+    	}
+    	return true;
     }
     
 }

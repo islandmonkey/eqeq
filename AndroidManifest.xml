@@ -5,14 +5,16 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="11"
         android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Holo.ButtonBar" >
         <activity
             android:name="com.islandmonkey.eqeq.EQActivity"
             android:label="@string/app_name" >
@@ -21,6 +23,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.islandmonkey.eqeq.AboutForm"
+            android:label="@string/title_activity_about_form" >
+        </activity>
+        <activity
+            android:name="com.islandmonkey.eqeq.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.islandmonkey.eqeq.EQActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.islandmonkey.eqeq.EQActivity" />
         </activity>
     </application>
 
