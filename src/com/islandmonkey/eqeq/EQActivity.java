@@ -57,10 +57,6 @@ public class EQActivity extends Activity {
     			Intent intent = new Intent(this, AboutForm.class);
     			this.startActivity(intent); // That's right now (well, it at least looks better)
     			break;
-    		case R.id.action_settings:
-    			Intent settingsintent = new Intent(this, SettingsActivity.class);
-    			this.startActivity(settingsintent);
-    			break;
     	}
     	return true;
     }
