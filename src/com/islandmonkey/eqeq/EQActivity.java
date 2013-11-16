@@ -42,6 +42,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.islandmonkey.eqeq.AboutForm;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.app.Dialog;
 
 /**
@@ -119,7 +120,7 @@ class IsHeadsetOn extends DialogFragment {
  * It initialises the AudioEffect listeners that detect when the switch/checkbox is changed,
  * subsequently turning the equaliser system on/off.
  * </p>
- * @param setListener - sets listeners.
+ * @param SetListeners - sets listeners
  *
  */
 
@@ -132,13 +133,19 @@ class EQSystem extends Equalizer {
 		super(priority, audioSession);	
 	}
 	public class SetListeners extends CheckBox {
-	public SetListeners(Context context) {
-			super(context);
-			// TODO Auto-generated constructor stub
-		}
-	public void setCheckBoxListeners() {
-		final CheckBox check = ((CheckBox)findViewById(R.id.checkBox1));
-	}
+		public SetListeners(Context context) {
+				super(context);
+				final CheckBox check = ((CheckBox)findViewById(R.id.checkBox1));
+			}
+			@Override
+			public void setOnCheckedChangeListener (CompoundButton.OnCheckedChangeListener listener) {
+				if (equaliser.getEnabled()) {
+					equaliser.setEnabled(false);
+				}
+				else if (!equaliser.getEnabled()) {
+					equaliser.setEnabled(true);
+				}
+			}
 		
 	}
 }
