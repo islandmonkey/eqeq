@@ -21,6 +21,12 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+/*
+ * TODO FOR THE FUTURE - Implement a reverb activity????
+ * TODO FOR THE FUTURE - Implement a system to save a preset per song/piece of audio? 
+ * 						 How will we go about this? 
+*/ 
+
 package com.islandmonkey.eqeq;
 
 import android.app.Activity;
@@ -35,28 +41,28 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.islandmonkey.eqeq.AboutForm;
-import android.widget.CompoundButton;
+import android.widget.CheckBox;
 import android.app.Dialog;
 
 /**
  * The following class initialises all essential utilities to load the app.
- * @author Aidan Fell
- *
  */
 
 public class EQActivity extends Activity {
 	final public int version = android.os.Build.VERSION.SDK_INT;
-    @SuppressWarnings("deprecation")
-	@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eq);
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        // TODO: Make it work!
-        this.checkForIntSpeaker(am);
     }
-
-
+    /*
+    @Override
+    protected void onStart() {
+    	super.onStart();
+    	this.checkForIntSpeaker();
+    }
+	*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -73,12 +79,13 @@ public class EQActivity extends Activity {
     	}
     	return true;
     }
-    // TODO: Make this work with onCreate (currently passes NullPointerException with onCreate!)
-    public boolean checkForIntSpeaker(AudioManager am) {
-    	if (am.isWiredHeadsetOn()) {
+    
+	private boolean checkForIntSpeaker() {
+		AudioManager aa = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+    	if (aa.isWiredHeadsetOn()) {
     		Bundle savedInstanceState = new Bundle();
-    		IsHeadsetOn headset = new IsHeadsetOn();
-    		headset.onCreateDialog(savedInstanceState);
+			IsHeadsetOn headset = new IsHeadsetOn();
+    		headset.getDialog();
     		return true;
     	}
     	else {
@@ -88,13 +95,19 @@ public class EQActivity extends Activity {
     
 }
 
+/**
+ * Class used to detect if we are using an internal speaker.
+ * @param DialogFragment - main dialog to notify the user.
+ */
+
 class IsHeadsetOn extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(R.string.dialog1_title)
 			.setMessage(R.string.dialog1_message);
-		return builder.create();
+		AlertDialog dialog = builder.create();
+		return dialog;
 		
 	}
 }
@@ -105,16 +118,27 @@ class IsHeadsetOn extends DialogFragment {
  * <p>
  * It initialises the AudioEffect listeners that detect when the switch/checkbox is changed,
  * subsequently turning the equaliser system on/off.
+ * </p>
  * @param setListener - sets listeners.
  *
  */
 
 class EQSystem extends Equalizer {
-
+	AudioEffect effect;
+	Equalizer equaliser = new Equalizer(0, 0); // Mwhahaha fuck you American English
 	public EQSystem(int priority, int audioSession)
 			throws IllegalStateException, IllegalArgumentException,
 			UnsupportedOperationException, RuntimeException {
-		super(priority, audioSession);
+		super(priority, audioSession);	
+	}
+	public class SetListeners extends CheckBox {
+	public SetListeners(Context context) {
+			super(context);
+			// TODO Auto-generated constructor stub
+		}
+	public void setCheckBoxListeners() {
+		final CheckBox check = ((CheckBox)findViewById(R.id.checkBox1));
+	}
 		
 	}
 }
