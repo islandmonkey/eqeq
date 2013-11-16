@@ -24,7 +24,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 /*
  * TODO FOR THE FUTURE - Implement a reverb activity????
  * TODO FOR THE FUTURE - Implement a system to save a preset per song/piece of audio? 
- * 						 How will we go about this? 
+ * 						 How will we go about this?
+ * TODO FOR THE FUTURE - Allow user-allocated EQ bands
 */ 
 
 package com.islandmonkey.eqeq;
@@ -38,12 +39,15 @@ import android.media.AudioManager;
 import android.media.audiofx.AudioEffect;
 import android.media.audiofx.Equalizer;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.islandmonkey.eqeq.AboutForm;
+import com.islandmonkey.eqeq.EQEQIsRunning;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.app.Dialog;
+import android.widget.SeekBar;
 
 /**
  * The following class initialises all essential utilities to load the app.
@@ -56,6 +60,7 @@ public class EQActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eq);
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        EQEQIsRunning.notify(getApplicationContext(), 0);
     }
     /*
     @Override
@@ -126,26 +131,36 @@ class IsHeadsetOn extends DialogFragment {
 
 class EQSystem extends Equalizer {
 	AudioEffect effect;
-	Equalizer equaliser = new Equalizer(0, 0); // Mwhahaha fuck you American English
+	Equalizer equaliser = new Equalizer(1, 0); // Mwhahaha fuck you American English
 	public EQSystem(int priority, int audioSession)
 			throws IllegalStateException, IllegalArgumentException,
 			UnsupportedOperationException, RuntimeException {
 		super(priority, audioSession);	
 	}
 	public class SetListeners extends CheckBox {
+		final CheckBox check = ((CheckBox)findViewById(R.id.checkBox1));
 		public SetListeners(Context context) {
 				super(context);
-				final CheckBox check = ((CheckBox)findViewById(R.id.checkBox1));
 			}
 			@Override
 			public void setOnCheckedChangeListener (CompoundButton.OnCheckedChangeListener listener) {
-				if (equaliser.getEnabled()) {
-					equaliser.setEnabled(false);
-				}
-				else if (!equaliser.getEnabled()) {
+				if (check.isChecked()) {
 					equaliser.setEnabled(true);
 				}
+				else if (!check.isChecked()) {
+					equaliser.setEnabled(false);
 			}
+		}
+	}
+	public class SetBandsAndSliderListeners extends SeekBar {
+		public SetBandsAndSliderListeners(Context context, AttributeSet attrs) {
+			super(context, attrs);
+			// TODO Auto-generated constructor stub
+		}
+
+		public void initArrays() {
+			
+		}
 		
 	}
 }

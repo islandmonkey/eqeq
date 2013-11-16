@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.islandmonkey.eqeq"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.islandmonkey.eqeq"
     android:versionCode="1"
-    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -36,5 +37,7 @@
                 android:value="com.islandmonkey.eqeq.EQActivity" />
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>

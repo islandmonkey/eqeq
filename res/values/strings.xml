@@ -15,4 +15,7 @@
     <string name="dialog1_title">Oh noes!</string>
     <string name="dialog1_message">You appear to be running EQEq with only the internal speaker. This means that you will not be properly able to hear the sound optimisations made by EQEq. Consider using headphones before continuing.</string>
     <string name="is_equaliser_on">Equaliser on</string>
+    <string name="eqeq_is_running_notification_title">EQEq is running!</string>
+    <string name="eqeq_is_running_notification_text">Tap to launch.</string>
+
 </resources>
