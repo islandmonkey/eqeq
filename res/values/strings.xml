@@ -10,5 +10,9 @@
     <string name="title_activity_about_form">About EQEq</string>
     <string name="MIT">The MIT License (MIT)\n\nCopyright © 2013 Aidan Fell\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \'Software\'), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
     <string name="about">About</string>
-
+    <string name="about_intro">EQEq: The open source Android equaliser app, created by Aidan Fell.\nGitHub: http://github.com/islandmonkey/eqeq</string>
+    <string name="eqswitch">Equaliser</string>
+    <string name="dialog1_title">Oh noes!</string>
+    <string name="dialog1_message">You appear to be running EQEq with only the internal speaker. This means that you will not be properly able to hear the sound optimisations made by EQEq. Consider using headphones before continuing.</string>
+    <string name="is_equaliser_on">Equaliser on</string>
 </resources>

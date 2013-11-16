@@ -24,23 +24,36 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 package com.islandmonkey.eqeq;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
+import android.media.audiofx.AudioEffect;
 import android.media.audiofx.Equalizer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.islandmonkey.eqeq.*;
+import com.islandmonkey.eqeq.AboutForm;
+import android.widget.CompoundButton;
+import android.app.Dialog;
 
+/**
+ * The following class initialises all essential utilities to load the app.
+ * @author Aidan Fell
+ *
+ */
 
 public class EQActivity extends Activity {
-
-    @Override
+	final public int version = android.os.Build.VERSION.SDK_INT;
+    @SuppressWarnings("deprecation")
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eq);
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        // TODO: Make it work!
+        this.checkForIntSpeaker(am);
     }
 
 
@@ -60,8 +73,41 @@ public class EQActivity extends Activity {
     	}
     	return true;
     }
+    // TODO: Make this work with onCreate (currently passes NullPointerException with onCreate!)
+    public boolean checkForIntSpeaker(AudioManager am) {
+    	if (am.isWiredHeadsetOn()) {
+    		Bundle savedInstanceState = new Bundle();
+    		IsHeadsetOn headset = new IsHeadsetOn();
+    		headset.onCreateDialog(savedInstanceState);
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    }
     
 }
+
+class IsHeadsetOn extends DialogFragment {
+	@Override
+	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setTitle(R.string.dialog1_title)
+			.setMessage(R.string.dialog1_message);
+		return builder.create();
+		
+	}
+}
+
+/**
+ * 
+ * This class contains the core equaliser system.
+ * <p>
+ * It initialises the AudioEffect listeners that detect when the switch/checkbox is changed,
+ * subsequently turning the equaliser system on/off.
+ * @param setListener - sets listeners.
+ *
+ */
 
 class EQSystem extends Equalizer {
 

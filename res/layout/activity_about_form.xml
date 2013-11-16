@@ -8,20 +8,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".AboutForm" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:autoLink="web|email"
+        android:text="@string/about_intro"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:editable="false"
         android:ems="10"
         android:gravity="bottom"
-        android:editable="false"
         android:scrollHorizontally="true"
-        android:text="@string/MIT" >
-
-        <requestFocus />
-    </EditText>
+        android:text="@string/MIT"
+        tools:ignore="Deprecated" />
 
 </RelativeLayout>
