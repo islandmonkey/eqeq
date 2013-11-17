@@ -25,11 +25,11 @@ package com.islandmonkey.eqeq;
 
 import android.os.Bundle;
 import android.app.Activity;
-
+/**
+ * General about form - nothing special.
+ */
 public class AboutForm extends Activity {
-	/**
-	 * General about form - nothing special.
-	 */
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

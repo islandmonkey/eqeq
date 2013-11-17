@@ -32,10 +32,15 @@ public final class R {
         public static final int ic_stat_eqeqis_running=0x7f020002;
     }
     public static final class id {
-        public static final int about_form=0x7f090004;
+        public static final int about_form=0x7f090009;
         public static final int checkBox1=0x7f090002;
         public static final int editText1=0x7f090001;
-        public static final int expandableListView1=0x7f090003;
+        public static final int eqVerticalSeekBar1=0x7f090003;
+        public static final int eqVerticalSeekBar2=0x7f090005;
+        public static final int eqVerticalSeekBar3=0x7f090006;
+        public static final int eqVerticalSeekBar4=0x7f090007;
+        public static final int eqVerticalSeekBar5=0x7f090008;
+        public static final int spinner=0x7f090004;
         public static final int textView1=0x7f090000;
     }
     public static final class layout {

@@ -32,7 +32,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
@@ -70,29 +69,32 @@ public class EQEQIsRunning {
 
 				// Set appropriate defaults for the notification light, sound,
 				// and vibration.
-				.setDefaults(Notification.DEFAULT_ALL)
+				.setDefaults(Notification.PRIORITY_LOW)
 
 				// Set required fields, including the small icon, the
 				// notification title, and text.
-				.setSmallIcon(R.drawable.ic_stat_eqeqis_running)
+				.setSmallIcon(R.drawable.eqeqicon)
 				.setContentTitle(title).setContentText(text)
 
 				// All fields below this line are optional.
 
 				// Use a default priority (recognised on devices running Android
 				// 4.1 or later)
-				.setPriority(NotificationCompat.PRIORITY_DEFAULT)
-
 				// Provide a large icon, shown with the notification in the
 				// notification drawer on devices running Android 3.0 or later.
 				.setLargeIcon(picture)
 
 				// Set the pending intent to be initiated when the user touches
 				// the notification.
-				.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(Intent.ACTION_MAIN), PendingIntent.FLAG_UPDATE_CURRENT))
+				.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT))
+				
+				// This is an ongoing notification
+				.setOngoing(true)
 
 				// Automatically dismiss the notification when it is touched.
 				.setAutoCancel(false);
+		
+				
 
 		notify(context, builder.build());
 	}

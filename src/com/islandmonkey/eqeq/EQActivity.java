@@ -23,9 +23,8 @@
 
 /*
  * TODO FOR THE FUTURE - Implement a reverb activity????
- * TODO FOR THE FUTURE - Implement a system to save a preset per song/piece of audio? 
- * 						 How will we go about this?
- * TODO FOR THE FUTURE - Allow user-allocated EQ bands
+ * TODO FOR THE FUTURE - Implement a system to save a preset per song/piece of audio? How will we go about this?
+ * TODO FOR THE NOT SO DISTANT FUTURE - Allow user-allocated EQ bands
 */ 
 
 package com.islandmonkey.eqeq;
@@ -47,7 +46,8 @@ import com.islandmonkey.eqeq.EQEQIsRunning;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.app.Dialog;
-import android.widget.SeekBar;
+import android.widget.Spinner;
+import com.islandmonkey.eqeq.VerticalSeekBar;
 
 /**
  * The following class initialises all essential utilities to load the app.
@@ -125,7 +125,6 @@ class IsHeadsetOn extends DialogFragment {
  * It initialises the AudioEffect listeners that detect when the switch/checkbox is changed,
  * subsequently turning the equaliser system on/off.
  * </p>
- * @param SetListeners - sets listeners
  *
  */
 
@@ -145,23 +144,33 @@ class EQSystem extends Equalizer {
 			@Override
 			public void setOnCheckedChangeListener (CompoundButton.OnCheckedChangeListener listener) {
 				if (check.isChecked()) {
-					equaliser.setEnabled(true);
+					setEnabled(true);
 				}
 				else if (!check.isChecked()) {
-					equaliser.setEnabled(false);
+					setEnabled(false);
 			}
 		}
 	}
-	public class SetBandsAndSliderListeners extends SeekBar {
+	public class SetBandsAndSliderListeners extends VerticalSeekBar {
 		public SetBandsAndSliderListeners(Context context, AttributeSet attrs) {
 			super(context, attrs);
-			// TODO Auto-generated constructor stub
+
 		}
 
 		public void initArrays() {
 			
+			
+		}
+	
+	}
+	public class SetPresets extends Spinner {
+
+		public SetPresets(Context context) {
+			super(context);
+			// TODO Auto-generated constructor stub
 		}
 		
 	}
 }
+
 

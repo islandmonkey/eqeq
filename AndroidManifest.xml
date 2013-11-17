@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.islandmonkey.eqeq"
+<manifest package="com.islandmonkey.eqeq"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -17,7 +16,8 @@
         android:theme="@style/AppBaseTheme" >
         <activity
             android:name="com.islandmonkey.eqeq.EQActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:alwaysRetainTaskState="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,16 +28,5 @@
             android:name="com.islandmonkey.eqeq.AboutForm"
             android:label="@string/title_activity_about_form" >
         </activity>
-        <activity
-            android:name="com.islandmonkey.eqeq.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:parentActivityName="com.islandmonkey.eqeq.EQActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.islandmonkey.eqeq.EQActivity" />
-        </activity>
     </application>
-
-    <uses-permission android:name="android.permission.VIBRATE" />
-
 </manifest>
