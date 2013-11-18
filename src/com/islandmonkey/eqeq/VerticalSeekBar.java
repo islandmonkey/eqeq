@@ -84,10 +84,14 @@ public class VerticalSeekBar extends SeekBar {
             int progress = getMax() - (int) (getMax() * event.getY() / getHeight());
              
             // Ensure progress stays within boundaries
-            if(progress < 0) {progress = 0;}
-            if(progress > getMax()) {progress = getMax();}
+            if (progress < 0) {
+            	progress = 0;
+            }
+            if (progress > getMax()) {
+            	progress = getMax();
+            }
             setProgress(progress);  // Draw progress
-            if(progress != lastProgress) {
+            if (progress != lastProgress) {
                 // Only enact listener if the progress has actually changed
                 lastProgress = progress;
                 onChangeListener.onProgressChanged(this, progress, true);

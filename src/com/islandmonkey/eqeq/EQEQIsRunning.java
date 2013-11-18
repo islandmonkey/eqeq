@@ -63,13 +63,15 @@ public class EQEQIsRunning {
 				R.string.eqeq_is_running_notification_title);
 		final String text = res.getString(
 				R.string.eqeq_is_running_notification_text);
+		final Intent notificationIntent = new Intent(context, EQActivity.class);
 
 		final NotificationCompat.Builder builder = new NotificationCompat.Builder(
 				context)
 
 				// Set appropriate defaults for the notification light, sound,
 				// and vibration.
-				.setDefaults(Notification.PRIORITY_LOW)
+				.setDefaults(Notification.FLAG_ONGOING_EVENT)
+				
 
 				// Set required fields, including the small icon, the
 				// notification title, and text.
@@ -86,7 +88,7 @@ public class EQEQIsRunning {
 
 				// Set the pending intent to be initiated when the user touches
 				// the notification.
-				.setContentIntent(PendingIntent.getActivity(context, 0, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT))
+				.setContentIntent(PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT))
 				
 				// This is an ongoing notification
 				.setOngoing(true)

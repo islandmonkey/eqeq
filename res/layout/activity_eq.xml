@@ -21,7 +21,6 @@
   ~ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,73 +29,245 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".EQActivity" >
-
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/is_equaliser_on"
-        android:layout_toLeftOf="@+id/eqVerticalSeekBar1"
-        android:checked="true" />
-
-    <com.islandmonkey.eqeq.VerticalSeekBar
-        android:id="@+id/eqVerticalSeekBar1"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignTop="@+id/eqVerticalSeekBar2"
-        android:layout_marginLeft="87dp"
-        android:max="4"
-        android:progress="2" />
+    tools:context=".EQActivity"
+    tools:ignore="SmallSp" >
+	 
+	<CheckBox
+	    android:id="@+id/checkBox1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentTop="true"
+	    android:checked="true"
+		android:text="@string/is_equaliser_on" />
 
 	<com.islandmonkey.eqeq.VerticalSeekBar
-	    android:id="@+id/eqVerticalSeekBar2"
+	    android:id="@+id/eqVerticalSeekBar10"
 	    android:layout_width="wrap_content"
 	    android:layout_height="fill_parent"
-	    android:layout_below="@+id/checkBox1"
-	    android:layout_marginLeft="12dp"
-	    android:layout_toRightOf="@+id/eqVerticalSeekBar1"
-	    android:max="4"
-	    android:progress="2" />
+	    android:layout_below="@+id/spinner1"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar9"
+	    android:max="24"
+	    android:progress="12" />
+ 
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar9"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar10"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar8"
+	    android:max="24"
+	    android:progress="12" /> 
+
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar8"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_below="@+id/spinner1"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar7"
+	    android:max="24"
+	    android:progress="12" />
+ 
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar7"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar8"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar6"
+	    android:max="24"
+	    android:progress="12" /> 
+
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar6"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar7"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar1"
+	    android:max="24"
+	    android:progress="12" />
 
 	<com.islandmonkey.eqeq.VerticalSeekBar
 	    android:id="@+id/eqVerticalSeekBar3"
 	    android:layout_width="wrap_content"
 	    android:layout_height="fill_parent"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar5"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar4"
+	    android:max="24"
+	    android:progress="12" />
+
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar5"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
 	    android:layout_alignTop="@+id/eqVerticalSeekBar2"
-	    android:layout_marginLeft="12dp"
-	    android:layout_toRightOf="@+id/eqVerticalSeekBar2"
-	    android:max="4"
-	    android:progress="2" />
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar3"
+	    android:max="24"
+	    android:progress="12" />
 
-		<com.islandmonkey.eqeq.VerticalSeekBar
-		    android:id="@+id/eqVerticalSeekBar4"
-		    android:layout_width="wrap_content"
-		    android:layout_height="fill_parent"
-		    android:layout_alignTop="@+id/eqVerticalSeekBar3"
-		    android:layout_marginLeft="12dp"
-		    android:layout_toRightOf="@+id/eqVerticalSeekBar3"
-		    android:max="4"
-		    android:progress="2" />
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar1"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar5"
+	    android:max="24"
+	    android:progress="12" />
 
-		<com.islandmonkey.eqeq.VerticalSeekBar
-		    android:id="@+id/eqVerticalSeekBar5"
-		    android:layout_width="wrap_content"
-		    android:layout_height="fill_parent"
-		    android:layout_alignTop="@+id/eqVerticalSeekBar4"
-		    android:layout_marginLeft="12dp"
-		    android:layout_toRightOf="@+id/eqVerticalSeekBar4"
-		    android:max="4"
-		    android:progress="2" />
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar6"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar2"
+	    android:max="24"
+	    android:progress="12" />
 
-		<Spinner
-		    android:id="@+id/spinner"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_alignParentLeft="true"
-		    android:layout_alignTop="@+id/eqVerticalSeekBar1" />
+	<com.islandmonkey.eqeq.VerticalSeekBar
+	    android:id="@+id/eqVerticalSeekBar4"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_alignRight="@+id/checkBox1"
+	    android:layout_below="@+id/spinner1"
+	    android:max="24"
+	    android:progress="12" />
+
+	<TextView
+	    android:id="@+id/textView1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignRight="@+id/textView2"
+	    android:layout_alignTop="@+id/eqVerticalSeekBar10"
+	    android:layout_marginTop="11dp"
+	    android:text="@string/max_eq_amp" />
+
+	<TextView
+	    android:id="@+id/TextView02"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar10"
+	    android:layout_alignRight="@+id/eqVerticalSeekBar10"
+	    android:text="@string/eq_freq_1"
+	    android:layout_centerHorizontal="true"	    
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView03"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar9"
+	    android:layout_alignRight="@+id/eqVerticalSeekBar9"
+	    android:layout_centerHorizontal="true"	    
+	    android:text="@string/eq_freq2"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView05"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar7"
+	    android:layout_alignLeft="@+id/eqVerticalSeekBar7"
+	    android:text="@string/_1_1khz"
+	    android:layout_centerHorizontal="true"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView04"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/TextView05"
+	    android:layout_alignBottom="@+id/TextView05"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar7"
+	    android:layout_centerHorizontal="true"
+	    android:text="@string/eq_freq3"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView09"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/eqVerticalSeekBar2"
+	    android:layout_toRightOf="@+id/eqVerticalSeekBar1"
+	    android:layout_centerHorizontal="true"
+	    android:text="@string/_10khz"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView06"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar6"
+	    android:layout_centerHorizontal="true"
+	    android:text="@string/eq_freq5"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView11"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar3"
+	    android:layout_alignRight="@+id/eqVerticalSeekBar3"
+	    android:layout_centerHorizontal="true"	    
+	    android:text="@string/_14khz"
+	    android:textSize="11sp" />
+	<TextView
+	    android:id="@+id/TextView10"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar5"
+	    android:layout_alignRight="@+id/eqVerticalSeekBar5"
+	    android:layout_centerHorizontal="true"	    
+	    android:text="@string/_12khz"
+	    android:textSize="11sp" />
+	<TextView
+	    android:id="@+id/TextView12"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar4"
+	    android:layout_alignRight="@+id/eqVerticalSeekBar4"
+	    android:layout_centerHorizontal="true"	    
+	    android:text="20kHz"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView08"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar5"
+	    android:layout_toLeftOf="@+id/eqVerticalSeekBar5"
+	    android:text="@string/_7khz"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/TextView07"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/eqVerticalSeekBar1"
+	    android:layout_alignRight="@+id/eqVerticalSeekBar1"
+	    android:text="@string/_5khz"
+	    android:textSize="11sp" />
+
+	<TextView
+	    android:id="@+id/textView3"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/textView2"
+	    android:layout_alignLeft="@+id/textView2"
+	    android:layout_marginBottom="178dp"
+	    android:text="@string/median_eq_level" />
+
+	<TextView
+	    android:id="@+id/textView2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/TextView02"
+	    android:layout_alignParentLeft="true"
+	    android:text="@string/min_eq_amp" />
+
+	<Spinner
+	    android:id="@+id/spinner1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true" />
 
 </RelativeLayout>

@@ -62,13 +62,6 @@ public class EQActivity extends Activity {
         AudioManager am = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
         EQEQIsRunning.notify(getApplicationContext(), 0);
     }
-    /*
-    @Override
-    protected void onStart() {
-    	super.onStart();
-    	this.checkForIntSpeaker();
-    }
-	*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -86,36 +79,6 @@ public class EQActivity extends Activity {
     	return true;
     }
     
-	private boolean checkForIntSpeaker() {
-		AudioManager aa = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-    	if (aa.isWiredHeadsetOn()) {
-    		Bundle savedInstanceState = new Bundle();
-			IsHeadsetOn headset = new IsHeadsetOn();
-    		headset.getDialog();
-    		return true;
-    	}
-    	else {
-    		return false;
-    	}
-    }
-    
-}
-
-/**
- * Class used to detect if we are using an internal speaker.
- * @param DialogFragment - main dialog to notify the user.
- */
-
-class IsHeadsetOn extends DialogFragment {
-	@Override
-	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setTitle(R.string.dialog1_title)
-			.setMessage(R.string.dialog1_message);
-		AlertDialog dialog = builder.create();
-		return dialog;
-		
-	}
 }
 
 /**
@@ -156,11 +119,10 @@ class EQSystem extends Equalizer {
 			super(context, attrs);
 
 		}
-
-		public void initArrays() {
-			
-			
+		public void initArrays() {	
+		
 		}
+
 	
 	}
 	public class SetPresets extends Spinner {
