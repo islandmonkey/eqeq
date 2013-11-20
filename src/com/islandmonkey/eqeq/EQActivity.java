@@ -29,6 +29,8 @@
 
 package com.islandmonkey.eqeq;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
@@ -45,14 +47,14 @@ import com.islandmonkey.eqeq.AboutForm;
 import com.islandmonkey.eqeq.EQEQIsRunning;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
 import android.app.Dialog;
 import android.widget.Spinner;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import com.islandmonkey.eqeq.VerticalSeekBar;
-
 /**
  * The following class initialises all essential utilities to load the app.
  */
-
 public class EQActivity extends Activity {
 	final public int version = android.os.Build.VERSION.SDK_INT;
     @Override
@@ -78,9 +80,7 @@ public class EQActivity extends Activity {
     	}
     	return true;
     }
-    
 }
-
 /**
  * 
  * This class contains the core equaliser system.
@@ -88,9 +88,10 @@ public class EQActivity extends Activity {
  * It initialises the AudioEffect listeners that detect when the switch/checkbox is changed,
  * subsequently turning the equaliser system on/off.
  * </p>
- *
+ * <h1>Nested classes</h1>
+ * @param SetListeners
+ * TODO: Clean this fucking shit up
  */
-
 class EQSystem extends Equalizer {
 	AudioEffect effect;
 	Equalizer equaliser = new Equalizer(1, 0); // Mwhahaha fuck you American English
@@ -99,37 +100,61 @@ class EQSystem extends Equalizer {
 			UnsupportedOperationException, RuntimeException {
 		super(priority, audioSession);	
 	}
-	public class SetListeners extends CheckBox {
+	public class SetCheckBoxListeners extends CheckBox {
 		final CheckBox check = ((CheckBox)findViewById(R.id.checkBox1));
-		public SetListeners(Context context) {
+		public SetCheckBoxListeners(Context context) {
 				super(context);
 			}
 			@Override
 			public void setOnCheckedChangeListener (CompoundButton.OnCheckedChangeListener listener) {
 				if (check.isChecked()) {
-					setEnabled(true);
+					equaliser.setEnabled(true);
 				}
 				else if (!check.isChecked()) {
-					setEnabled(false);
+					equaliser.setEnabled(false);
 			}
 		}
 	}
-	public class SetBandsAndSliderListeners extends VerticalSeekBar {
+	public class SetBandsAndSliderListeners extends VerticalSeekBar implements Equalizer.OnParameterChangeListener, VerticalSeekBar.OnSeekBarChangeListener {
+		// urgh - TODO Improve me
+		public VerticalSeekBar vsb1 = ((VerticalSeekBar)findViewById(R.id.eqVerticalSeekBar10));
+		public VerticalSeekBar vsb2 = ((VerticalSeekBar)findViewById(R.id.eqVerticalSeekBar9));
+		public VerticalSeekBar vsb3 = ((VerticalSeekBar)findViewById(R.id.eqVerticalSeekBar8));
+		public VerticalSeekBar vsb4 = ((VerticalSeekBar)findViewById(R.id.eqVerticalSeekBar7));
+		public VerticalSeekBar vsb5 = ((VerticalSeekBar)findViewById(R.id.eqVerticalSeekBar6));
 		public SetBandsAndSliderListeners(Context context, AttributeSet attrs) {
-			super(context, attrs);
+			super(context, attrs);	
+		}
+		final private Object EQ_BAND_1 = vsb1;
+		@Override
+		public void setOnSeekBarChangeListener(OnSeekBarChangeListener onChangeListener) {
+			super.setOnSeekBarChangeListener(onChangeListener);
+			equaliser.setParameterListener((OnParameterChangeListener) EQ_BAND_1);
+		}
+		@Override
+		public void onParameterChange(Equalizer effect, int status, int param1,
+				int param2, int value) {
 
 		}
-		public void initArrays() {	
-		
+		@Override
+		public void onProgressChanged(SeekBar seekBar, int progress,
+				boolean fromUser) {
 		}
-
-	
+		@Override
+		public void onStartTrackingTouch(SeekBar seekBar) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void onStopTrackingTouch(SeekBar seekBar) {
+			// TODO Auto-generated method stub
+			
+		}	
 	}
 	public class SetPresets extends Spinner {
 
 		public SetPresets(Context context) {
 			super(context);
-			// TODO Auto-generated constructor stub
 		}
 		
 	}

@@ -31,5 +31,6 @@
     <string name="_5khz">5kHz</string>
     <string name="_7khz">7kHz</string>
     <string name="_20kHz">20kHz</string>
+    <string name="_20khz">20kHz</string>
 
 </resources>

@@ -37,28 +37,29 @@ public final class R {
         public static final int TextView04=0x7f090012;
         public static final int TextView05=0x7f090011;
         public static final int TextView06=0x7f090014;
-        public static final int TextView07=0x7f090015;
-        public static final int TextView08=0x7f090019;
+        public static final int TextView07=0x7f090019;
+        public static final int TextView08=0x7f09001a;
         public static final int TextView09=0x7f090013;
-        public static final int TextView10=0x7f090017;
-        public static final int TextView11=0x7f090016;
-        public static final int TextView12=0x7f090018;
-        public static final int about_form=0x7f09001a;
+        public static final int TextView10=0x7f090016;
+        public static final int TextView11=0x7f090015;
+        public static final int TextView12=0x7f090017;
+        public static final int about_form=0x7f09001b;
         public static final int checkBox1=0x7f090002;
         public static final int editText1=0x7f090001;
-        public static final int eqVerticalSeekBar1=0x7f090008;
+        public static final int eqVerticalSeekBar1=0x7f090009;
         public static final int eqVerticalSeekBar10=0x7f090003;
-        public static final int eqVerticalSeekBar2=0x7f09000c;
-        public static final int eqVerticalSeekBar3=0x7f090009;
-        public static final int eqVerticalSeekBar4=0x7f09000a;
+        public static final int eqVerticalSeekBar2=0x7f09000d;
+        public static final int eqVerticalSeekBar3=0x7f09000a;
+        public static final int eqVerticalSeekBar4=0x7f09000c;
         public static final int eqVerticalSeekBar5=0x7f09000b;
-        public static final int eqVerticalSeekBar6=0x7f090007;
-        public static final int eqVerticalSeekBar7=0x7f090006;
-        public static final int eqVerticalSeekBar8=0x7f090005;
-        public static final int eqVerticalSeekBar9=0x7f090004;
+        public static final int eqVerticalSeekBar6=0x7f090008;
+        public static final int eqVerticalSeekBar7=0x7f090007;
+        public static final int eqVerticalSeekBar8=0x7f090006;
+        public static final int eqVerticalSeekBar9=0x7f090005;
+        public static final int spinner1=0x7f090004;
         public static final int textView1=0x7f090000;
         public static final int textView2=0x7f09000e;
-        public static final int textView3=0x7f09000d;
+        public static final int textView3=0x7f090018;
     }
     public static final class layout {
         public static final int activity_about_form=0x7f030000;
@@ -74,6 +75,7 @@ public final class R {
         public static final int _14khz=0x7f05001a;
         public static final int _1_1khz=0x7f050017;
         public static final int _20kHz=0x7f05001d;
+        public static final int _20khz=0x7f05001e;
         public static final int _5khz=0x7f05001b;
         public static final int _7khz=0x7f05001c;
         public static final int about=0x7f050008;
@@ -95,29 +97,29 @@ public final class R {
         public static final int median_eq_level=0x7f050012;
         public static final int min_eq_amp=0x7f050011;
         public static final int no=0x7f050002;
-        public static final int pref_default_display_name=0x7f050023;
-        public static final int pref_description_social_recommendations=0x7f050021;
+        public static final int pref_default_display_name=0x7f050024;
+        public static final int pref_description_social_recommendations=0x7f050022;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f050025;
+        public static final int pref_header_data_sync=0x7f050026;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f05001f;
+        public static final int pref_header_general=0x7f050020;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f050028;
-        public static final int pref_ringtone_silent=0x7f05002b;
-        public static final int pref_title_add_friends_to_messages=0x7f050024;
-        public static final int pref_title_display_name=0x7f050022;
-        public static final int pref_title_new_message_notifications=0x7f050029;
-        public static final int pref_title_ringtone=0x7f05002a;
-        public static final int pref_title_social_recommendations=0x7f050020;
-        public static final int pref_title_sync_frequency=0x7f050026;
-        public static final int pref_title_system_sync_settings=0x7f050027;
-        public static final int pref_title_vibrate=0x7f05002c;
+        public static final int pref_header_notifications=0x7f050029;
+        public static final int pref_ringtone_silent=0x7f05002c;
+        public static final int pref_title_add_friends_to_messages=0x7f050025;
+        public static final int pref_title_display_name=0x7f050023;
+        public static final int pref_title_new_message_notifications=0x7f05002a;
+        public static final int pref_title_ringtone=0x7f05002b;
+        public static final int pref_title_social_recommendations=0x7f050021;
+        public static final int pref_title_sync_frequency=0x7f050027;
+        public static final int pref_title_system_sync_settings=0x7f050028;
+        public static final int pref_title_vibrate=0x7f05002d;
         public static final int title_activity_about_form=0x7f050006;
-        public static final int title_activity_settings=0x7f05001e;
+        public static final int title_activity_settings=0x7f05001f;
         public static final int togglebutton=0x7f050005;
         public static final int yes=0x7f050003;
     }
